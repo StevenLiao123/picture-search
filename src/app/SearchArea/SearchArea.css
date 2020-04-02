@@ -1,0 +1,14 @@
+.search-area {
+  border: 2px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 400px) {
+    .ant-row {
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
