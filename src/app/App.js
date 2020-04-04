@@ -10,9 +10,9 @@ export default () => {
     <div className="app">
       <SearchArea />
       <Switch>
-        <Route path="/gallery" component={Gallery} />
+        <Route path="/" exact component={Gallery} />
         <Route path="/favourites-list" component={FavouritesList} />
-        <Redirect to="/gallery" />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
