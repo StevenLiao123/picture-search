@@ -1,14 +1,19 @@
 .search-area {
-  border: 2px solid black;
+  border: 1px #D2D2D2 solid;
+}
+
+.search-area-forms {
+  display: flex;
+  flex-direction: row;
 }
 
 h1 {
     text-align: center;
 }
 
-@media only screen and (max-width: 400px) {
-    .ant-row {
-    flex-direction: column !important;
+@media only screen and (max-width: 1000px) {
+    .search-area-forms {
+    flex-direction: column;
     align-items: center;
   }
 }

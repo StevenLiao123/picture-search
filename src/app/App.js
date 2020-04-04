@@ -5,7 +5,7 @@ import Gallery from "./Gallery";
 import FavouritesList from "./FavouritesList";
 import "./App.css";
 
-function App() {
+export default () => {
   return (
     <div className="app">
       <SearchArea />
@@ -16,6 +16,4 @@ function App() {
       </Switch>
     </div>
   );
-}
-
-export default App;
+};
