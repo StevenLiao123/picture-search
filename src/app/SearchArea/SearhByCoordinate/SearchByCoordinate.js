@@ -52,7 +52,7 @@ class SearchByCoordinate extends Component {
             }
           ]}
         >
-          <Input type="number"/>
+          <Input type="float"/>
         </Form.Item>
 
         <Form.Item
@@ -65,7 +65,7 @@ class SearchByCoordinate extends Component {
             }
           ]}
         >
-          <Input type="number"/>
+          <Input type="float"/>
         </Form.Item>
 
         <Form.Item {...tailLayout}>

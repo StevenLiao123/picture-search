@@ -67,7 +67,7 @@ class AddForm extends Component {
             }
           ]}
         >
-          <Input type="number"/>
+          <Input type="float"/>
         </Form.Item>
 
         <Form.Item
@@ -80,7 +80,7 @@ class AddForm extends Component {
             }
           ]}
         >
-          <Input type="number"/>
+          <Input type="float"/>
         </Form.Item>
 
         <Form.Item {...tailLayout}>
