@@ -1,4 +1,18 @@
-/* .search-by-coordinate {
-    height: 100%;
-    width: 50%;
-} */
+.search-by-coordinate {
+  width: 50%;
+  border-right: 1px solid grey;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search-by-coordinate {
+    border-right: none;
+    border-bottom: 1px solid grey;
+    margin-bottom: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .ant-col-offset-6 {
+    margin-left: 0 !important;
+  }
+}

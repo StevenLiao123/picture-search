@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Form, Input, Button, message } from "antd";
-import { connect } from 'react-redux';
-import { setLatitude, setLongtitude, receivePhotosData } from '../../redux/actions';
-import "./SearchByCoordinate.css";
 
 const layout = {
   labelCol: {
@@ -19,16 +16,22 @@ const tailLayout = {
   }
 };
 
-class SearchByCoordinate extends Component {
+class AddForm extends Component {
+  state = {
+    location: {},
+  };
+
   render() {
-    const onFinish = async values => {
-      this.props.receivePhotosData(values.lat, values.lon, 1);
-      this.props.setLatitudeValue(values.lat);
-      this.props.setLongtitudeValue(values.lon);
+    const onFinish = values => {
+      this.setState({
+          location: values
+      }, () => {
+        this.props.getLocation(this.state.location);
+      })
     };
 
     const onFinishFailed = errorInfo => {
-      message.error("Please input the right latitude and longtitude!");
+      message.error("Please input the name, latitude and longtitude!");
     };
 
     return (
@@ -38,10 +41,22 @@ class SearchByCoordinate extends Component {
         initialValues={{
           remember: true
         }}
-        onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        className="search-by-coordinate"
+        onFinish={onFinish}
       >
+        <Form.Item
+          label="Name"
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: "Please input name!"
+            }
+          ]}
+        >
+          <Input type="string"/>
+        </Form.Item>
+
         <Form.Item
           label="Latitude"
           name="lat"
@@ -70,7 +85,7 @@ class SearchByCoordinate extends Component {
 
         <Form.Item {...tailLayout}>
           <Button type="primary" htmlType="submit">
-            Search
+            Confirm
           </Button>
         </Form.Item>
       </Form>
@@ -78,15 +93,4 @@ class SearchByCoordinate extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    setLatitudeValue: (lat) => dispatch(setLatitude(lat)),
-    setLongtitudeValue: (lon) => dispatch(setLongtitude(lon)),
-    receivePhotosData: (lat, lon, page) => dispatch(receivePhotosData(lat, lon, page)),
-  }
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(SearchByCoordinate);
+export default AddForm;

@@ -1,3 +1,16 @@
 .favourites-list {
-    border: 2px solid black;
+  border: 1px #d2d2d2 solid;
+  background: #ececec;
+  padding: 30px;
+}
+
+.back-to-gallery {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+  .back-to-gallery {
+    display: flex;
+    justify-content: center;
+  }
 }
